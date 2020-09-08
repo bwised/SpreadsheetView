@@ -29,8 +29,8 @@ extension BorderStyle: Equatable {
         switch (lhs, rhs) {
         case (.none, .none):
             return true
-        case let (.solid(lhs), .solid(rhs)):
-            return lhs.width == rhs.width && lhs.color == rhs.color
+        case (.solid(let lhsWidth, let lhsColor), .solid(let rhsWidth, let rhsColor)):
+            return lhsWidth == rhsWidth && lhsColor == rhsColor
         default:
             return false
         }
